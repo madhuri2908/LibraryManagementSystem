@@ -23,26 +23,26 @@ public class ViewBooks {
 				
 	
 				JFrame f = new JFrame("Books Available");
-				// f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
 	
-				Connection connection = App.connect(); // connect to database
-				String sql = "select * from BOOKS"; // select all books
+				Connection connection = App.connect(); 
+				String sql = "select * from BOOKS"; 
 				try {
 					Statement stmt = connection.createStatement();
-					stmt.executeUpdate("USE LIBRARY"); // use database
+					stmt.executeUpdate("USE LIBRARY"); 
 					stmt = connection.createStatement();
 					ResultSet rs = stmt.executeQuery(sql);
-					JTable book_list = new JTable(); // view data in table format
+					JTable book_list = new JTable(); 
 					book_list.setModel(DbUtils.resultSetToTableModel(rs));
-					// mention scroll bar
+					
 					JScrollPane scrollPane = new JScrollPane(book_list);
 	
-					f.add(scrollPane); // add scrollpane
-					f.setSize(800, 400); // set size for frame
+					f.add(scrollPane); 
+					f.setSize(800, 400); 
 					f.setVisible(true);
 					f.setLocationRelativeTo(null);
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
+					
 					JOptionPane.showMessageDialog(null, e1);
 				}
 	

@@ -21,7 +21,7 @@ public class IssuedBooks {
 			public void actionPerformed(ActionEvent e) {
 	
 				JFrame f = new JFrame("Users List");
-				// f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
 	
 				Connection connection = App.connect();
 				String sql = "select * from issued";
@@ -40,7 +40,7 @@ public class IssuedBooks {
 					f.setVisible(true);
 					f.setLocationRelativeTo(null);
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
+					
 					JOptionPane.showMessageDialog(null, e1);
 				}
 	
