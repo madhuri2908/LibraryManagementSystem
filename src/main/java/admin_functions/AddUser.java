@@ -22,36 +22,36 @@ public class AddUser {
 		Admin.add_user.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				final JFrame g = new JFrame("Enter User Details"); // Frame to enter user details
-				// g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				// Create label
+				final JFrame g = new JFrame("Enter User Details"); 
+				
+				
 				JLabel l1, l2;
-				l1 = new JLabel("Username"); // label 1 for username
+				l1 = new JLabel("Username"); 
 				l1.setBounds(30, 15, 100, 30);
 
-				l2 = new JLabel("Password"); // label 2 for password
+				l2 = new JLabel("Password"); 
 				l2.setBounds(30, 50, 100, 30);
 
-				// set text field for username
+				
 				final JTextField F_user = new JTextField();
 				F_user.setBounds(110, 15, 200, 30);
 
-				// set text field for password
+				
 				final JPasswordField F_pass = new JPasswordField();
 				F_pass.setBounds(110, 50, 200, 30);
-				// set radio button for admin
+				
 				final JRadioButton a1 = new JRadioButton("Admin");
 				a1.setBounds(55, 80, 200, 30);
-				// set radio button for user
+				
 				JRadioButton a2 = new JRadioButton("User");
 				a2.setBounds(130, 80, 200, 30);
-				// add radio buttons
+				
 				ButtonGroup bg = new ButtonGroup();
 				bg.add(a1);
 				bg.add(a2);
 
-				JButton create_but = new JButton("Create");// creating instance of JButton for Create
-				create_but.setBounds(130, 130, 80, 25);// x axis, y axis, width, height
+				JButton create_but = new JButton("Create");
+				create_but.setBounds(130, 130, 80, 25);
 				create_but.addActionListener(new ActionListener() {
 
 					public void actionPerformed(ActionEvent e) {
@@ -78,7 +78,7 @@ public class AddUser {
 						}
 
 						catch (SQLException e1) {
-							// TODO Auto-generated catch block
+							
 							JOptionPane.showMessageDialog(null, e1);
 						}
 
@@ -93,9 +93,9 @@ public class AddUser {
 				g.add(l2);
 				g.add(F_user);
 				g.add(F_pass);
-				g.setSize(350, 200);// 400 width and 500 height
-				g.setLayout(null);// using no layout managers
-				g.setVisible(true);// making the frame visible
+				g.setSize(350, 200);
+				g.setLayout(null);
+				g.setVisible(true);
 				g.setLocationRelativeTo(null);
 
 			}
