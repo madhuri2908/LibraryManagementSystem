@@ -19,60 +19,59 @@ import user_functions.User;
 public class Login {
 	public static void login() {
 
-		final JFrame f = new JFrame("Login");// creating instance of JFrame
+		final JFrame f = new JFrame("Login");
 		JLabel l1, l2;
-		l1 = new JLabel("Username"); // Create label Username
-		l1.setBounds(30, 15, 100, 30); // x axis, y axis, width, height
+		l1 = new JLabel("Username"); 
+		l1.setBounds(30, 15, 100, 30); 
 
-		l2 = new JLabel("Password"); // Create label Password
+		l2 = new JLabel("Password"); 
 		l2.setBounds(30, 50, 100, 30);
 
-		final JTextField F_user = new JTextField(); // Create text field for username
+		final JTextField F_user = new JTextField(); 
 		F_user.setBounds(110, 15, 200, 30);
 
-		final JPasswordField F_pass = new JPasswordField(); // Create text field for password
+		final JPasswordField F_pass = new JPasswordField(); 
 		F_pass.setBounds(110, 50, 200, 30);
 
-		JButton login_but = new JButton("Login");// creating instance of JButton for Login Button
-		login_but.setBounds(130, 90, 80, 25);// Dimensions for button
-		login_but.addActionListener(new ActionListener() { // Perform action
+		JButton login_but = new JButton("Login");
+		login_but.setBounds(130, 90, 80, 25);
+		login_but.addActionListener(new ActionListener() { 
 
 			public void actionPerformed(ActionEvent e) {
 
-				String username = F_user.getText(); // Store username entered by the user in the variable "username"
+				String username = F_user.getText(); 
 				@SuppressWarnings("deprecation")
-				String password = F_pass.getText(); // Store password entered by the user in the variable "password"
+				String password = F_pass.getText(); 
 
 				if (username.equals("")) // If username is null
 				{
-					JOptionPane.showMessageDialog(null, "Please enter username"); // Display dialog box with the message
+					JOptionPane.showMessageDialog(null, "Please enter username");
 				} else if (password.equals("")) // If password is null
 				{
-					JOptionPane.showMessageDialog(null, "Please enter password"); // Display dialog box with the message
-				} else { // If both the fields are present then to login the user, check wether the user
-							// exists already
-							// System.out.println("Login connect");
-					Connection connection = App.connect(); // Connect to the database
+					JOptionPane.showMessageDialog(null, "Please enter password"); 
+				} else { 
+							
+					Connection connection = App.connect(); /
 					try {
 						Statement stmt = connection.createStatement();
-						stmt.executeUpdate("USE LIBRARY"); // Use the database with the name "Library"
+						stmt.executeUpdate("USE LIBRARY"); 
 						String st = ("SELECT * FROM USERS WHERE USERNAME='" + username + "' AND PASSWORD='" + password
-								+ "'"); // Retreive username and passwords from users
-						ResultSet rs = stmt.executeQuery(st); // Execute query
-						if (rs.next() == false) { // Move pointer below
+								+ "'"); 
+						ResultSet rs = stmt.executeQuery(st); 
+						if (rs.next() == false) { 
 							System.out.print("No user");
-							JOptionPane.showMessageDialog(null, "Wrong Username/Password!"); // Display Message
+							JOptionPane.showMessageDialog(null, "Wrong Username/Password!"); 
 
 						} else {
 							f.dispose();
 							do {
-								String admin = rs.getString("ADMIN"); // user is admin
+								String admin = rs.getString("ADMIN"); 
 								System.out.println(admin);
-								String UID = rs.getString("UID"); // Get user ID of the user
-								if (admin.equals("1")) { // If boolean value 1
-									Admin.admin_menu(); // redirect to admin menu
+								String UID = rs.getString("UID"); 
+								if (admin.equals("1")) { 
+									Admin.admin_menu(); 
 								} else {
-									User.user_menu(UID); // redirect to user menu for that user ID
+									User.user_menu(UID); 
 								}
 							}while (rs.next());
 						}
@@ -83,15 +82,15 @@ public class Login {
 			}
 		});
 
-		f.add(F_pass); // add password
-		f.add(login_but);// adding button in JFrame
-		f.add(F_user); // add user
-		f.add(l1); // add label1 i.e. for username
-		f.add(l2); // add label2 i.e. for password
+		f.add(F_pass); 
+		f.add(login_but);
+		f.add(F_user); 
+		f.add(l1); 
+		f.add(l2);
 
-		f.setSize(400, 180);// 400 width and 500 height
-		f.setLayout(null);// using no layout managers
-		f.setVisible(true);// making the frame visible
+		f.setSize(400, 180);
+		f.setLayout(null);
+		f.setVisible(true);
 		f.setLocationRelativeTo(null);
 
 	}
