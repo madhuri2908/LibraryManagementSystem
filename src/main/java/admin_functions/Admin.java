@@ -28,11 +28,8 @@ public class Admin {
 		create_but.setBounds(450, 60, 120, 25);
 		create_but.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-
 				CreateDB.create(); 
-				JOptionPane.showMessageDialog(null, "Database Created/Reset!"); 
-																				
-
+				JOptionPane.showMessageDialog(null, "Database Created/Reset!");																
 			}
 		});
 

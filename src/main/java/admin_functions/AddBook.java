@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import library_system.App;
 
 public class AddBook {
+	static Connection connection;
 	public static void addBook() {
 		Admin.add_book.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -54,7 +55,7 @@ public class AddBook {
 						
 						int price_int = Integer.parseInt(price);
 
-						Connection connection = App.connect();
+						connection = App.connect();
 
 						try {
 							Statement stmt = connection.createStatement();

@@ -17,7 +17,7 @@ public class CreateDB {
 					// System.out.print("yes");
 					Statement stmt = connection.createStatement();
 					// Drop database if it pre-exists to reset the complete database
-					String sql = "DROP DATABASE library";  
+					String sql = "DROP DATABASE library";
 					stmt.executeUpdate(sql);
 				}
 			}

@@ -12,9 +12,7 @@ public class App {
 	public static Connection connect() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?user=root&password=1234");
-			
 			return con;
 		} catch (Exception ex) {
 			ex.printStackTrace();

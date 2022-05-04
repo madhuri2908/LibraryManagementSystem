@@ -41,7 +41,7 @@ public class Login {
 
 				String username = F_user.getText(); 
 				@SuppressWarnings("deprecation")
-				String password = F_pass.getText(); 
+				String password = F_pass.getText();
 
 				if (username.equals("")) // If username is null
 				{
@@ -51,7 +51,7 @@ public class Login {
 					JOptionPane.showMessageDialog(null, "Please enter password"); 
 				} else { 
 							
-					Connection connection = App.connect(); /
+					Connection connection = App.connect(); 
 					try {
 						Statement stmt = connection.createStatement();
 						stmt.executeUpdate("USE LIBRARY"); 
