@@ -9,15 +9,15 @@ public class CreateDB {
 		try {
 			Connection connection = App.connect();
 			ResultSet resultSet = connection.getMetaData().getCatalogs();
-			// iterate each catalog in the ResultSet
+			  
 			while (resultSet.next()) {
-				// Get the database name, which is at position 1
+				
 				String databaseName = resultSet.getString(1);
 				if (databaseName.equals("library")) {
 					// System.out.print("yes");
 					Statement stmt = connection.createStatement();
 					// Drop database if it pre-exists to reset the complete database
-					String sql = "DROP DATABASE library";
+					String sql = "DROP DATABASE library";  
 					stmt.executeUpdate(sql);
 				}
 			}

@@ -18,21 +18,21 @@ public class IssueBook {
 	public static void issueBook() {
 		Admin.issue_book.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// enter details
+				
 				final JFrame g = new JFrame("Enter Details");
-				// g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				// create labels
+				
+				
 				JLabel l1, l2, l3, l4;
-				l1 = new JLabel("Book ID(BID)"); // Label 1 for Book ID
+				l1 = new JLabel("Book ID(BID)"); 
 				l1.setBounds(30, 15, 100, 30);
 
-				l2 = new JLabel("User ID(UID)"); // Label 2 for user ID
+				l2 = new JLabel("User ID(UID)"); 
 				l2.setBounds(30, 53, 100, 30);
 
-				l3 = new JLabel("Period(days)"); // Label 3 for period
+				l3 = new JLabel("Period(days)"); 
 				l3.setBounds(30, 90, 100, 30);
 
-				l4 = new JLabel("Issued Date(DD-MM-YYYY)"); // Label 4 for issue date
+				l4 = new JLabel("Issued Date(DD-MM-YYYY)"); 
 				l4.setBounds(30, 127, 150, 30);
 
 				final JTextField F_bid = new JTextField();
@@ -47,8 +47,8 @@ public class IssueBook {
 				final JTextField F_issue = new JTextField();
 				F_issue.setBounds(180, 130, 130, 30);
 
-				JButton create_but = new JButton("Submit");// creating instance of JButton
-				create_but.setBounds(130, 170, 80, 25);// x axis, y axis, width, height
+				JButton create_but = new JButton("Submit");
+				create_but.setBounds(130, 170, 80, 25);
 				create_but.addActionListener(new ActionListener() {
 
 					public void actionPerformed(ActionEvent e) {
@@ -73,7 +73,7 @@ public class IssueBook {
 						}
 
 						catch (SQLException e1) {
-							// TODO Auto-generated catch block
+							
 							JOptionPane.showMessageDialog(null, e1);
 						}
 
@@ -90,9 +90,9 @@ public class IssueBook {
 				g.add(F_bid);
 				g.add(F_period);
 				g.add(F_issue);
-				g.setSize(350, 250);// 400 width and 500 height
-				g.setLayout(null);// using no layout managers
-				g.setVisible(true);// making the frame visible
+				g.setSize(350, 250);
+				g.setLayout(null);
+				g.setVisible(true);
 				g.setLocationRelativeTo(null);
 
 			}
