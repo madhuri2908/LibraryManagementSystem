@@ -26,7 +26,7 @@ public class ViewBooks {
 				
 	
 				Connection connection = App.connect(); 
-				String sql = "select * from BOOKS"; 
+				String sql = "select * from BOOKS";
 				try {
 					Statement stmt = connection.createStatement();
 					stmt.executeUpdate("USE LIBRARY"); 
