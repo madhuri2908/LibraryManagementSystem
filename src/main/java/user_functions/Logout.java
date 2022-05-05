@@ -7,7 +7,7 @@ import library_system.Login;
 
 public class Logout {
 	public static void logout() {
-		User.logout.addActionListener(new ActionListener() { // Perform action
+		User.logout.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				User.f.dispose();
 				Login.login();

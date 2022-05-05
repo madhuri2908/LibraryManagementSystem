@@ -30,7 +30,7 @@ public class User {
 		UserBooks.userBooks(UID);
 		
 		
-		// creating instance of JButton
+		
 		logout.setBounds(90, 60, 120, 25);// x axis, y axis, width, height
 		Logout.logout();
 		
