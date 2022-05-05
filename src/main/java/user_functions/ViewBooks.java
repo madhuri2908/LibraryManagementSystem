@@ -36,7 +36,7 @@ public class ViewBooks {
 					JScrollPane scrollPane = new JScrollPane(book_list); // enable scroll bar
 
 					f.add(scrollPane); // add scroll bar
-					f.setSize(800, 400); // set dimensions of view books frame
+					f.setSize(800, 400); 
 					f.setVisible(true);
 					f.setLocationRelativeTo(null);
 				} catch (SQLException e1) {

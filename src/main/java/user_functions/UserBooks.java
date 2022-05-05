@@ -22,7 +22,7 @@ public class UserBooks {
 		
 				JFrame f = new JFrame("My Books"); // View books issued by user
 				// f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				int UID_int = Integer.parseInt(UID); // Pass user ID
+				int UID_int = Integer.parseInt(UID); 
 		
 				// .iid,issued.uid,issued.bid,issued.issued_date,issued.return_date,issued,
 				Connection connection = App.connect(); // connect to database
@@ -45,7 +45,7 @@ public class UserBooks {
 					JScrollPane scrollPane = new JScrollPane(book_list);
 		
 					f.add(scrollPane); // add scroll bar
-					f.setSize(800, 400); // set dimensions of my books frame
+					f.setSize(800, 400); 
 					f.setVisible(true);
 					f.setLocationRelativeTo(null);
 				} catch (SQLException e1) {
